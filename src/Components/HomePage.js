@@ -52,15 +52,13 @@ export const HomePage = (props) => {
         )
     })
 
-    const onClick= () => {
-        alert('dbdj')
-    }
+
     return (
         <Row >
       <TopNav/>
       <SubNav/>
       <FirstBanner/>
-      <SecondBanner onClick={onClick}/>
+      <SecondBanner />
       <ProfileSection>
         {userList}
       </ProfileSection>

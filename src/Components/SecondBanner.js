@@ -17,18 +17,19 @@ export const SecondBanner = (props) => {
     const buttonRef = useRef()
 
     const handleDivClick = () => {
-        console.log('jdndkndk')
+       
         history.push('/form')
     }
 
     const handleClick = () => {
         console.log('jhdbqjjeb')
       }
+      
 
-    useEffect(() => {
-        console.log(buttonRef.current);
-    }, [])
+      
+
     return (
+        <>
         <Col sm={{span: 24}}>
         <StyledSecondBanner>
           <StyledInnerDiv>
@@ -37,20 +38,22 @@ export const SecondBanner = (props) => {
               <Eclipse2></Eclipse2>
             </BannerImage>
             <BannerMessage >
-              <h1 onClick={handleClick}>Tolu &amp; Joy’s Experience</h1>
+              <h1>Tolu &amp; Joy’s Experience</h1>
               <StyledTranparentButton>Customer</StyledTranparentButton>
               <p>I had the best experience shopping with vasiti. Usability of the website was great, very good customer service, an all round great experience. I would definately be coming back! I had the best experience shopping with vasiti. Usability of the website was great, very good customer service, an all round great experience. I would definately be coming back!</p>
-              <div onClick={props.onClick}>
-              <UnderlinedButto ref={buttonRef} >
+            
+              <UnderlinedButto onClick={handleDivClick} ref={buttonRef} >
                 <StyledBorderlessButton>Share your own story!</StyledBorderlessButton>
                 <StyledUnderline src={underline}/>
               </UnderlinedButto>
-              </div>
             </BannerMessage>
           </StyledInnerDiv>
           <Eclipse></Eclipse>
         </StyledSecondBanner>
+       
       </Col>
+      
+      </>
     );
 };
 
@@ -60,7 +63,7 @@ const StyledSecondBanner = styled.div`
   padding-top: 64px; 
   width: 100%;
   position: relative;
-  z-index: -2;
+  /* z-index: -2; */
   overflow-y: hidden;
   
 `
@@ -167,17 +170,18 @@ const StyledUnderline = styled.img`
 const BannerImage = styled.div`
  flex-basis: 50%;
  order:2;
- z-index: -2;
+ z-index: 200;
  position: relative;
 
  @media ${device.laptop}{
    order: 1;
-   z-index: 0;
+  /*  z-index: 0; */
  }
 `
 
 const StyledImage = styled.img`
   width: 100%;
+  z-index: 200;
 `
 const Eclipse = styled.div`
   width: 42vw;
@@ -187,7 +191,7 @@ const Eclipse = styled.div`
   position: absolute;
   top: 10%;
   left: 9%;
-  z-index: -1;
+  z-index: 100;
   display: none;
 
   @media ${device.laptop}{
